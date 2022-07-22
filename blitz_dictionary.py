@@ -1,4 +1,4 @@
-class Dictioanry:
+class Dictionary:
     blitz_dictionary = {
         'GreenBlitz': ['💚🖤💚🖤'],
         'גרינבליץ': ['💚🖤💚🖤'],

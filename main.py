@@ -4,7 +4,7 @@ from math import ceil
 
 import blitz_dictionary
 
-dictionary = blitz_dictionary.Dictioanry.blitz_dictionary
+dictionary = blitz_dictionary.Dictionary.blitz_dictionary
 
 
 def convert_line(content: str) -> str:
