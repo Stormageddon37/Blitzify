@@ -2,8 +2,6 @@ import emojis
 import openai
 from decouple import config
 
-from translate import text_to_english
-
 openai.api_key = config('OPENAI_API_KEY')
 
 
@@ -27,7 +25,6 @@ def slow_smart_emojify_text(text: str) -> str:
 	for item in words:
 		response += item + ' ' + smart_emojify_text(item) + ' '
 	return response.replace('  ', ' ')
-
 
 # message = open(file='input.txt', mode='r', encoding='utf-8').read()
 # message = text_to_english(message)

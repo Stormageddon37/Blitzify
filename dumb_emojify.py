@@ -1,6 +1,4 @@
 import random
-import time
-from math import ceil
 
 import blitz_dictionary
 
