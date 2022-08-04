@@ -1,24 +1,26 @@
 import random
 
 import blitz_dictionary
+from translate import text_to_english
 
 dictionary = blitz_dictionary.Dictioanry.blitz_dictionary
 
 
 def dumb_emojify_text(content: str) -> str:
-	content = content.replace(',', '').replace('!', '❗').replace('?', '❓')
+	content = content.replace('!', '❗').replace('?', '❓')
 	last_emoji = ''
-	for word in content.split():
-		if word in dictionary:
-			replacement = random.choice(dictionary[word])
+	for hebrew_word in content.split():
+		english_word = text_to_english(hebrew_word).lower()
+		if english_word in dictionary:
+			replacement = random.choice(dictionary[english_word])
 			if replacement is not last_emoji:
-				content = content.replace(word, f'{word} {replacement}')
+				content = content.replace(hebrew_word, f'{hebrew_word} {replacement}')
 				last_emoji = replacement
 			else:
-				dictionary[word].remove(replacement)
-				replacement = random.choice(dictionary[word])
+				dictionary[english_word].remove(replacement)
+				replacement = random.choice(dictionary[english_word])
 				if replacement is not None:
-					content = content.replace(word, f'{word} {replacement}')
+					content = content.replace(hebrew_word, f'{hebrew_word} {replacement}')
 					last_emoji = replacement
 
-	return content.replace('  ', ' ')
+	return content
