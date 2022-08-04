@@ -1,0 +1,4 @@
+openai~=0.20.0
+python-decouple
+googletrans==3.1.0a0
+emojis~=0.6.0
