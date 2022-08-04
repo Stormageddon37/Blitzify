@@ -5,7 +5,6 @@ from smart_emojify import slow_smart_emojify_text
 from translate import text_to_english, text_to_hebrew
 from utils import remove_emojis, add_footer
 
-
 def full_emojify(content):
 	content = remove_emojis(content)
 	content = text_to_english(content)
