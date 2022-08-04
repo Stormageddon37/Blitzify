@@ -25,9 +25,3 @@ def slow_smart_emojify_text(text: str) -> str:
 	for item in words:
 		response += item + ' ' + smart_emojify_text(item) + ' '
 	return response.replace('  ', ' ')
-
-# message = open(file='input.txt', mode='r', encoding='utf-8').read()
-# message = text_to_english(message)
-# print('original english msg:\n\n' + message)
-# message = slow_smart_emojify_text(message)
-# print('end result:\n\n' + message)
