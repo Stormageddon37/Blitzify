@@ -3,7 +3,7 @@ import random
 import blitz_dictionary
 from translate import text_to_english
 
-dictionary = blitz_dictionary.Dictioanry.blitz_dictionary
+dictionary = blitz_dictionary.Dictionary.blitz_dictionary
 
 
 def dumb_emojify_text(content: str) -> str:
