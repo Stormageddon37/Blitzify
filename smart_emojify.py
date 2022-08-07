@@ -1,6 +1,10 @@
+import random
+
 import emojis
 import openai
 from decouple import config
+
+from translate import text_to_english
 
 openai.api_key = config('OPENAI_API_KEY')
 
@@ -19,9 +23,12 @@ def smart_emojify_text(text: str) -> str:
 	return ''.join(emojis.get(response.choices[0].get('text')))
 
 
-def slow_smart_emojify_text(text: str) -> str:
-	response = ''
+def slow_smart_emojify_text(text: str, percentage: int) -> str:
 	words = text.split()
-	for item in words:
-		response += item + ' ' + smart_emojify_text(item) + ' '
-	return response.replace('  ', ' ')
+	for i, word in enumerate(words):
+		x = random.randint(1, 100)
+		if x <= percentage:
+			english_word = text_to_english(word).lower()
+			emoji_word = smart_emojify_text(english_word)
+			words[i] = f' {word} {emoji_word}'
+	return ''.join(words)
