@@ -1,3 +1,4 @@
+import random
 import re
 
 import openai
@@ -34,4 +35,5 @@ def remove_emojis(content):
 
 
 def add_footer(message):
-	return message + '\n💚🖤💚🖤'
+	footers = ['🖤💚', '💚🖤']
+	return f'{message}\n{2 * random.choice(footers)}'
