@@ -17,8 +17,11 @@ def dumb_emojify_text(content: str) -> str:
 				content = content.replace(hebrew_word, f'{hebrew_word} {replacement}')
 				last_emoji = replacement
 			else:
-				dictionary[english_word].remove(replacement)
-				replacement = random.choice(dictionary[english_word])
+				stashed_word = dictionary[english_word].remove(replacement)
+				try:
+					replacement = random.choice(dictionary[english_word])
+				except IndexError:
+					replacement = stashed_word
 				if replacement is not None:
 					content = content.replace(hebrew_word, f'{hebrew_word} {replacement}')
 					last_emoji = replacement
