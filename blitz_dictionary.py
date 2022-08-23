@@ -14,11 +14,17 @@ class Dictionary:
 		'intellij': ['☕'],
 		'intelij': ['☕'],
 		'cyber': ['💻'],
-		'community': ['🤮'],
+		'community': ['🫂'],
 		'workshop': ['🛠️'],
 		'risks': ['🩹'],
 		'dangers': ['🩹'],
 		'dangerous': ['🩹'],
 		'relevant': ['🤔'],
-		'attention': ['🖤💚']
+		'attention': ['🖤💚'],
+		'water': ['💧'],
+		'drawing': ['📐', '📏'],
+		'part': ['🔩', '⚙'],
+		'key': ['🗝️'],
+		'manufacturing': ['🧠'],
+		'saw': ['🪚']
 	}
