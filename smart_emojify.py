@@ -14,13 +14,13 @@ def smart_emojify_text(text: str) -> str:
 		model="text-davinci-002",
 		prompt=f"Convert text into emojis. {text}:",
 		temperature=1.0,
-		max_tokens=50,
+		max_tokens=70,
 		top_p=1,
 		frequency_penalty=0,
 		presence_penalty=0.85,
 		stop=["\n"]
 	)
-	return ''.join(emojis.get(response.choices[0].get('text')))
+	return ''.join(emojis.get(response.choices[0].get('text'))).rstrip()
 
 
 def slow_smart_emojify_text(text: str, percentage: int) -> str:
@@ -31,4 +31,4 @@ def slow_smart_emojify_text(text: str, percentage: int) -> str:
 			english_word = text_to_english(word).lower()
 			emoji_word = smart_emojify_text(english_word)
 			words[i] = f' {word} {emoji_word}'
-	return ''.join(words)
+	return ''.join(words).rstrip()
