@@ -20,7 +20,7 @@ def smart_emojify_text(text: str) -> str:
 		presence_penalty=0.85,
 		stop=["\n"]
 	)
-	return ''.join(emojis.get(response.choices[0].get('text')))
+	return ''.join(emojis.get(response.choices[0].get('text'))).rstrip()
 
 
 def slow_smart_emojify_text(text: str, percentage: int) -> str:
@@ -31,4 +31,4 @@ def slow_smart_emojify_text(text: str, percentage: int) -> str:
 			english_word = text_to_english(word).lower()
 			emoji_word = smart_emojify_text(english_word)
 			words[i] = f' {word} {emoji_word}'
-	return ''.join(words)
+	return ''.join(words).rstrip()
